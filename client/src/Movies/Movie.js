@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useRouteMatch } from 'react-router-dom';
 import MovieCard from './MovieCard';
 
+import {Link} from 'react-router-dom';
+
 function Movie({ addToSavedList }) {
   const [movie, setMovie] = useState(null);
   const match = useRouteMatch();
@@ -33,6 +35,8 @@ function Movie({ addToSavedList }) {
       <div className='save-button' onClick={saveMovie}>
         Save
       </div>
+
+      <Link className='edit-button' to={`/update-movie/${movie.id}`}>EDIT</Link>
     </div>
   );
 }
