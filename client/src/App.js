@@ -4,7 +4,7 @@ import SavedList from "./Movies/SavedList";
 import MovieList from "./Movies/MovieList";
 import Movie from "./Movies/Movie";
 import axios from 'axios';
-import PutForm from "./Forms/PutForm";
+import PutForm from "./Form/PutForm";
 
 const App = () => {
   const [savedList, setSavedList] = useState([]);
