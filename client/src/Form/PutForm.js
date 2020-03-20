@@ -49,6 +49,7 @@ const PutForm= props => {
         axios
         .put(`http://localhost:5000/api/movies/${params.id}`, movie)
         .then(() => {
+        // make axios call from app to call the list of movies again
         props.getMovieList();
         history.push('/');
         })

@@ -40,6 +40,7 @@ function Movie({ addToSavedList, getMovieList }) {
     .delete(`http://localhost:5000/api/movies/${id}`)
     .then((res) => {
       console.log(res);
+      // make axios call from app to call the list of movies again
       getMovieList();
       history.push('/')
     })
