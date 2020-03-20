@@ -4,11 +4,13 @@ import {useParams, useHistory} from 'react-router-dom';
 
 import axios from 'axios';
 
-const Put_Form= props => {
+const PutForm= props => {
 
     const params= useParams();
+    // useParams is helping us connect the editing id to the id of our url
 
     const history= useHistory();
+    // use history is helping us use the `props.history.push() method`
 
     const [movieInfo, setMovieInfo]= useState({
         id: params.id,
@@ -19,14 +21,20 @@ const Put_Form= props => {
     })
 
     useEffect(() => {
+
+        // movieToUpdate is checking through the movieList state in app, to make sure
+        // we are matching the id of the movie already in movieList to the movie we are editing
         const movieToUpdate = props.movieList.find(movie => {
             return `${movie.id}` === params.id
         })
 
+        // then here we are setting the state of movieToUpdate to the local state
+        // in our form, which is now connected to movieList
         if(movieToUpdate){
             setMovieInfo(movieToUpdate)
         }
 
+        // we want to watch for the changes here
     }, [props.movieList, params.id]);
 
     const handleChanges= evt => {
@@ -54,8 +62,11 @@ const Put_Form= props => {
 
     }
 
-    const handleChangesOnStar = e => {
-        setMovieInfo({ ...movieInfo, stars: e.target.value.split(', ') })
+    const handleListOfStars = e => {
+        setMovieInfo({ 
+            ...movieInfo, 
+            stars: e.target.value.split(', ') 
+        })
     }
 
     return (
@@ -83,7 +94,7 @@ const Put_Form= props => {
                     value={movieInfo.metascore}
                 />
                 <input
-                    onChange={handleChangesOnStar}
+                    onChange={handleListOfStars}
                     name='stars'
                     placeholder='enter stars'
                     type='text'
@@ -97,4 +108,4 @@ const Put_Form= props => {
     )
 }
 
-export default Put_Form;
+export default PutForm;
