@@ -64,6 +64,39 @@ body {
 .save-button:hover {
   background-color: green;
   color: white;
+  cursor: pointer;
+}
+
+.edit-button{
+  position: absolute;
+  top: 65px;
+  right: 25px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightseagreen;
+  text-decoration: none;
+  color: black;
+}
+
+.edit-button:hover {
+  background-color: green;
+  color: white;
+}
+
+.delete-button{
+  // position: absolute;
+  // top: 105px;
+  // right: 25px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightseagreen;
+  text-decoration: none;
+  color: black;
+}
+
+.delete-button:hover {
+  background-color: green;
+  color: white;
 }
 
 .home-button {
@@ -74,4 +107,49 @@ body {
 .movie-warning {
   color: red;
   text-align: center;
+}
+
+.putForm{
+  // border: 1px solid black;
+  margin-top: 5%;
+
+  form{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin: 0 auto;
+
+    input{
+      font-size: 14px;
+      border: none;
+      margin-bottom: 2%;
+      background: none;
+      border-bottom: 1px solid green;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    .btn{
+      display: flex;
+      margin-top: 2%;
+      width: 100%;
+      justify-content: center;
+      
+      button{
+        padding: 2%;
+        font-size: 12px;
+        border-radius: 3px;
+      }
+
+      button:focus{
+        outline: none;
+      }
+
+      button:hover{
+        cursor: pointer;
+      }
+    }
+  }
 }
